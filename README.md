@@ -7,13 +7,13 @@
 ###
 
 <div align="center">
-    <img src="./public/img/web-1.png" alt="Web"  width="500" />
+    <img src="./src/assets/img/web-1.png" alt="Web"  width="500" />
 </div>
 
 ###
 
 <div align="center">
-    <img src="./public/img/web-responsive.png" alt="Web responsive"  width="500" />
+    <img src="./src/assets/img/web-responsive.png" alt="Web responsive"  width="500" />
 </div>
 
 ###
@@ -30,5 +30,11 @@
     <img width="12" />
     <img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg" alt="Tailwind Logo" height="40">
 </div>
+
+###
+
+###
+
+<h2 align="left">URL de la web: https://blog-informatica.vercel.app/ </h2>
 
 ###
