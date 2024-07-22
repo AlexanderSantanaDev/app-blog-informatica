@@ -1,0 +1,411 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Personalizar clases de tailwind */
+@layer base {
+  @font-face {
+    font-family: "TrebuchetMS";
+    src: url("../fonts/TrebuchetMS.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "BebasNeue";
+    src: url("../fonts/BebasNeue.otf");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "WebSymbolsRegular";
+    src: url("../fonts/websymbols-regular-webfont.eot");
+    src: url("../fonts/websymbols-regular-webfont.eot?#iefix")
+        format("embedded-opentype"),
+      url("../fonts/websymbols-regular-webfont.woff") format("woff"),
+      url("../fonts/websymbols-regular-webfont.ttf") format("truetype"),
+      url("../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular")
+        format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .symbol {
+    font-family: "WebSymbolsRegular";
+  }
+
+  .bebas {
+    font-family: "BebasNeue";
+  }
+
+  .trebuchet {
+    font-family: "TrebuchetMS";
+  }
+}
+
+/* Componentes de clases personalizadas */
+@layer components {
+  /* ESTILOS MENU CABECERA */
+  .menu-item {
+    @apply mr-5 
+        ml-5
+        tracking-wider
+        flex-none
+        xs:flex-1; /* En tamaño xs: comparte el espacio entre todos los elementos */
+  }
+
+  .menu-item-a {
+    @apply block
+            transition
+            duration-200
+            hover:text-azul-claro
+            transform
+            hover:scale-125;
+  }
+
+  /* ESTILOS BANNER */
+  .text-banner {
+    font-family: "BebasNeue";
+    text-shadow: 2px 2px 1px black;
+  }
+
+  /* ESTILOS TARJETA */
+  .card {
+    @apply flex-1 /* Las tarjetas ocupan el mismo ancho TODAS */
+            h-80 /*  altura de 320px cada tarjeta */
+            border-2 /* border 2px */
+            border-gray-200 /* borde de color gris */
+            shadow-md /* sombra intermedia */
+            bg-white /* color de fondo blanco */
+            overflow-hidden /* cualquier cosa que sobresalga de la caja se ocultará */
+            m-5 /* margen de 5  */
+            pl-5 /* paddin izq de 5 */
+            pr-5 /* p derecho de 5 */
+            mt-10 /* margin top de 10 */
+            cursor-pointer
+            transition
+            duration-300
+            hover:bg-black /* Efecto al hacer hover por las cards (targetas) */
+            xs:h-40 /* En tamaño xs: altura de 40 */
+            xs:m-2 /* En tamaño xs: margenes de 2 */
+            md:h-40 /* En tamaño md: la altura de la tarjeta sera de 40 */
+            md:m-2 /* En tamaño md: margen de 2 */
+            lg:h-80 /* En tamaño lg: altura de 80 */
+            lg:m-5 /* En tamaño lg: margenes de 5 */;
+  }
+
+  .card-icon {
+    font-family: "WebSymbolsRegular";
+    @apply block /* En bloque */
+            w-full /* ocupa todo el ancho de la caja */
+            h-32 
+            text-5xl
+            text-center
+            mt-12 /* margin tip de 12 */
+            mx-auto /* centrado automaticamente */
+            transition /* transition */
+            duration-200 /* duracion 200ms */
+            transform /*  con transform aumentamos el tamaño de group-hover gradualmente  */
+            pt-5 /* pading de 5 */
+            group-hover:scale-150 /* aumento de tamaño gradualmente  */
+            group-hover:text-azul-claro
+            xs:mt-3 /* En tamaño xs: margin top de 3 */
+            xs:h-20 /* En tamaño xs: altura de 20 */
+            md:mt-3 /* En tamaño md: margenes de 3 */
+            md:h-20 /* En tamaño md: altura de 20 */
+            lg:mt-12 /* En tamaño lg: margenes de 12 */
+            lg:h-32 /* En tamaño lg: altura de 32 */;
+  }
+
+  .card-category {
+    font-family: "TrebuchetMS";
+    @apply w-full /* obtiene todo el ancho de la caja que lo contiene */
+            h-12
+            text-xl
+            font-bold
+            text-center
+            text-azul-oscuro
+            transition
+            duration-300
+            group-hover:text-white
+            xs:text-base /* En tamaño xs: el tamaño del texto pequeño */
+            xs:h-6 /* En tamaño xs: altura de 6 */
+            md:text-base /* texto pequeño en tamaño md */
+            md:h-6 /* En tamaño md: altura de 6 */
+            lg:text-lg /* en tamaño lg el texto de descripcion se hace un poco pequeño */
+            lg:h-12 /* En tamaño lg: altura de 12 */;
+  }
+
+  .card-description {
+    @apply text-center
+            text-azul-oscuro
+            text-base
+            transition
+            duration-300
+            group-hover:text-white
+            xs:hidden /* En tamaño xs: ocultamos la descripción */
+            md:hidden /* en tamaño md: ocultamos la descripcion */
+            lg:block /* en tamaño lg: mostramos la descripcioon */
+            lg:text-sm /* en tamaño lg el tamaño del texto sera pequeño */
+            lg:mt-1.5 /* en log margentop */
+            xl:text-base /* En tamaño xl: tamaño del texto base */
+            xl:mt-1 /* En tamaño xl: margin top de 1 */;
+  }
+
+  .articles-header {
+    font-family: "BebasNeue"; /* Fuente bebas */
+    background: url("../img/pxgray.png"), white; /* Fondo de imagen y con el color de fondo blanco */
+    @apply block /* block: comportamineto en bloque */
+            w-full /* w-full: tamaño (ancho) el 100%, */
+            h-20
+            text-center
+            text-4xl
+            font-medium /* Tamaño medio grueso del texto */
+            tracking-widest /* tracking-widest: espaciado de letras 0.1rem */
+            pt-5
+            border /* Borde de 1px */
+            shadow-header3D /* Sombra personalizada en tailwind.config.js */;
+  }
+
+  .article-item {
+    @apply w-full /* w-full: ocupa todo el ancho que tiene automaticamente */
+            h-auto /* altura automatica */
+            border /* Borde 1px */
+            border-gray-200 /* color borde */
+            m-10 /* margenes de 10 */
+            mx-auto /* Centrado automaticamente */
+            p-2.5 /* padding interno 2.5 */
+            bg-white 
+            text-black 
+            shadow-md /* sombra media */;
+  }
+
+  .article-data {
+    @apply float-right /* elemento flotante a la derecha */
+            bg-gray-800 
+            text-white 
+            h-10 /* altura de 10 */
+            leading-6 /* altura de linea de 6 */
+            p-2 /* padding interno de 2 */
+            -m-2.5 /* margin negativo que hace que se una este div al article (.article-item) de arriba */
+            text-sm  /* texto pequeño */
+            rounded-bl-lg /* borde redondeado abajo a la izquierda de tamaño lg */;
+  }
+
+  .article-data span {
+    @apply m-2.5 /* margenes de 2.5 para separar los span */;
+  }
+
+  .article-head {
+    @apply block /* Comportamiento en bloque */
+            text-2xl /* tamaño de texto 2xl */
+            m-1; /* margenes de 1 */
+  }
+
+  .article-head a {
+    @apply font-semibold /* Fuente en negrita */
+            text-azul-oscuro 
+            hover:underline; /* Al hacer hover el enlace se subraya */
+  }
+
+  .article-description {
+    @apply block  /* Comportamiento en bloque */
+            mt-3 /* Margin top de 3 */
+            mb-3 /* Margin bottom de 3 */
+            text-base /* Tamaño fuente base */
+            font-sans  /* Fuente de texto sans */
+            font-normal /* Fuente normal no negrita */;
+  }
+
+  /* ASIDE */
+  .aside-header {
+    font-family: "BebasNeue"; /* Fuente bebas */
+    background: url("../img/pxgray.png"), white;
+    @apply block /* Comportamiento en bloque */
+            h-11 /* Altura de 11 */
+            leading-10 /* altura de linea de 10 */
+            text-3xl /* Tamaño de texto 3xl */
+            font-medium /* Tamaño de negrita de fuiente media */
+            tracking-widest /* Espaciado de letras */
+            pl-3.5 /* Padding left de 3.5 */
+            pt-1 /* Padding top de 1 */
+            mb-3.5 /* Margin bottom de 3.5 */
+            border /* Borde de 1px */
+            shadow-header3D; /* Sombra personalizada 3D en tailñwind.cionfig.js */
+  }
+
+  .aside-box {
+    @apply w-10/12 /* Tamaño 10/12 83.3% */
+            /* max-w-xs */
+            h-60 /* Altura de 60 */
+            mt-5 /* Margin top de 5 */
+            mb-7 /* Margin bottom de 7 */
+            mx-auto /* Centrado automatico */
+            pt-1 /* Paddint top de 1 */
+            bg-white 
+            shadow-box /* Sombra personalizada en tailwind.config.js */
+            xs:w-60;
+  }
+
+  /* Fuente symbol, absolute: posicion, ml-7: margin left 7, mt-1: margin top 1, h-8: altura 8 */
+  .login-icon {
+    @apply symbol 
+            text-center 
+            absolute 
+            ml-7 
+            mt-1 
+            h-8;
+  }
+
+  .login-input {
+    @apply block 
+            mx-auto 
+            mt-5 
+            w-10/12 
+            h-8 border 
+            border-gray-300 
+            shadow-inner 
+            pl-7 
+            rounded-md 
+            text-gray-500 
+            transition 
+            duration-300 
+            outline-none 
+            focus:outline-none 
+          focus:text-gray-600;
+  }
+
+  .login-button {
+    @apply trebuchet
+            w-24 
+            h-8 
+            mt-5 
+            ml-5 
+            mb-5 
+            text-center 
+            text-white 
+            text-base /* Tipo de fuente base */ 
+            font-light /* Texto algo brilloso */
+            border 
+            border-azul-oscuro 
+            bg-gradient-to-b from-azul-claro to-azul-oscuro /* Gradiente de color de fondo que empieza desde abajo (b-botoom) en azul claro y acaba en azul oscuro */
+            rounded-none /* Sin bordes */
+            cursor-pointer
+            transition /* transicion */
+            duration-300 /* duracion */
+            hover:shadow-md; /* Al hacer hover se ve una sombra */
+  }
+
+  .login-link {
+    @apply block /* Comportamineto el bloque */
+            ml-5 /* Margin left de 5 */
+            text-sm /* Tamaño de texto pequeño */
+            text-gray-600 
+            hover:underline /* Al hacer hover se subraya el elemento */
+            hover:text-azul-oscuro; /* Al hacer hover el color del texto cambia a azul claro */
+  }
+
+  .social-icon {
+    @apply symbol 
+            block 
+            text-gray-700 
+            text-3xl 
+            mt-3 
+            mb-5 
+            ml-5;
+  }
+
+  .social-overlay {
+    @apply block 
+            absolute 
+            h-10 
+            pl-2 
+            pr-2 
+            pt-1 
+            ml-16 
+            -mt-14 
+            font-sans 
+            font-bold 
+            text-gray-700 
+            tracking-wide 
+            shadow-md 
+            border-4 
+            border-white 
+            bg-gray-100 
+            cursor-pointer
+            transition 
+            duration-300
+            opacity-0 
+            transform 
+            -translate-x-16
+            group-hover:opacity-100 
+            group-hover:transform 
+            group-hover:translate-x-1;
+  }
+
+  /* FOOTER STYLES */
+  .footer-box {
+    @apply trebuchet 
+            flex-1 /* flex-1: Ocupa el espacio (de la misma manera) entre elementos automaticamente */
+            w-80
+            h-96
+            m-10
+            text-center
+            text-white
+            xs:w-11/12 /* En tamaño xs se pone el tamaño de 11/12 */
+            xs:mx-auto /* En tamaño xs se centra automaticamente */
+            xs:mt-3
+            md:w-11/12
+            md:mx-auto
+            md:mt-3
+            lg:w-80 /* En tamaño lg se pone el tamaño 80 */
+            lg:m-10;
+  }
+
+  .footer-header {
+    background: url("../img/pxgray.png"), white;
+    @apply bebas
+            tracking-wide
+            text-center
+            text-4xl
+            text-black
+            rounded-md
+            p-1.5
+            pt-2
+            mb-4;
+  }
+
+  .footer-menu {
+    @apply text-left 
+            m-5 
+            text-2xl;
+  }
+
+  .footer-menu li {
+    @apply mt-3
+            p-1
+            border-b-2
+            border-gray-400
+            transition
+            duration-300;
+  }
+
+  .footer-menu li a {
+    @apply block
+            h-10
+            transition
+            duration-300
+            text-azul-claro
+            hover:text-white;
+  }
+
+  .browsers a {
+    @apply flex-1
+            mb-1.5;
+  }
+
+  .browsers a img {
+    @apply w-11;
+  }
+}

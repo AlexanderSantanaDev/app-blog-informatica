@@ -1,0 +1,39 @@
+---
+import Header from "../components/Header.astro";
+import SubHeader from "../components/SubHeader.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content=" Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-body-pattern bg-scroll border-8">
+    <!-- Componente Header -->
+    <Header />
+
+    <!-- Componente SubHeader -->
+    <SubHeader />
+
+    <!-- Contenido principal de la página -->
+    <main class="container w-11/12 mt-5 mx-auto flex xs:flex-col md:flex-row">
+      <slot />
+    </main>
+
+    <!-- INICIO PIE DE PÁGINA -->
+    <Footer />
+    <!-- FIN PIE DE PÁGINA -->
+  </body>
+</html>
