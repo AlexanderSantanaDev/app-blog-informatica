@@ -20,8 +20,8 @@ export default {
       }), */
       backgroundImage: {
         // imagenes de fondo
-        "body-pattern": "url('/src/assets/img/pattern.png')",
-        banner: "url('/src/assets/img/earth.jpg')",
+        "body-pattern": "url('/public/img/pattern.png')",
+        banner: "url('/public/img/earth.jpg')",
       },
       backgroundPosition: {
         //  posicion de imagen personalizada
