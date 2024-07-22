@@ -1,3 +1,13 @@
+---
+import html5Badge from "../assets/img/html5.png";
+import firefoxIcon from "../assets/img/firefox-icon.png";
+import chromeIcon from "../assets/img/chrome.png";
+import operaIcon from "../assets/img/Opera_256x256.png";
+import safariIcon from "../assets/img/safari.png";
+import androidIcon from "../assets/img/android.png";
+import iosIcon from "../assets/img/ios.png";
+---
+
 <footer
   id="footer"
   class="w-full h-auto bg-blue-950 text-white overflow-hidden"
@@ -33,22 +43,18 @@
     <div id="info" class="footer-box">
       <h5 class="footer-header">Desarrollado con</h5>
       <p class="mb-5 text-center">
-        <img
-          class="mb-5 mx-auto"
-          src="/public/img/html5-badge-h-css3-graphics-multimedia-performance-semantics.png"
-          alt=""
-        />
+        <img class="mb-5 mx-auto" src={html5Badge.src} alt="" />
       </p>
 
       <!-- Llmamos al método de la clase 'footer-header' que hemos creado en tailwind.css -->
       <h5 class="footer-header">Optimizado para</h5>
       <div class="browsers flex flex-row space-x-5 mb-6">
-        <a href="#"><img src="/public/img/firefox-icon.png" alt="" /></a>
-        <a href="#"><img src="/public/img/chrome.png" alt="" /></a>
-        <a href="#"><img src="/public/img/Opera_256x256.png" alt="" /></a>
-        <a href="#"><img src="/public/img/safari.png" alt="" /></a>
-        <a href="#"><img src="/public/img/android.png" alt="" /></a>
-        <a href="#"><img src="/public/img/ios.png" alt="" /></a>
+        <a href="#"><img src={firefoxIcon.src} alt="Firefox Icon" /></a>
+        <a href="#"><img src={chromeIcon.src} alt="Chrome Icon" /></a>
+        <a href="#"><img src={operaIcon.src} alt="Opera Icon" /></a>
+        <a href="#"><img src={safariIcon.src} alt="Safari Icon" /></a>
+        <a href="#"><img src={androidIcon.src} alt="Android Icon" /></a>
+        <a href="#"><img src={iosIcon.src} alt="iOS Icon" /></a>
       </div>
 
       <h5 class="footer-header">AUTOR</h5>
