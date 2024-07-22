@@ -7,13 +7,13 @@
 ###
 
 <div align="center">
-    <img src="./src/assets/img/web-1.png" alt="Web"  width="500" />
+    <img src="./public/img/web-1.png" alt="Web"  width="500" />
 </div>
 
 ###
 
 <div align="center">
-    <img src="./src/assets/img/web-responsive.png" alt="Web responsive"  width="500" />
+    <img src="./public/img/web-responsive.png" alt="Web responsive"  width="500" />
 </div>
 
 ###
